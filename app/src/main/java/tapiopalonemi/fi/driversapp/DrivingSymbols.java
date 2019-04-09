@@ -18,13 +18,17 @@ public class DrivingSymbols extends AppCompatActivity{
     String[] listviewTitle = new String[]{
             "Dangerous Curve", "Dangerous Curve Bend", "Direction Left or right", "Pass Either Side",
             "Passing place on Narrow Road", "Pedestrian Crossing", "Round about", "Track for cyclists and pedestrians",
-            "Tunnel"
+            "Tunnel","Advanced Direction","Advisory Sign" ,"Bus and taxi lane","End Of Bus And Taxi Lane",
+            "Direction Straight Or Right","Don't turn Left","Residental Area","Priority Symbol"
     };
 
 
     int[] listviewImage = new int[]{
             R.drawable.dangerouscurve, R.drawable.dangerous2, R.drawable.directionleftright, R.drawable.passeitherside,
-            R.drawable.passingplaceonnarrowroad, R.drawable.pedestriancrossing, R.drawable.roundabout, R.drawable.trackforcyclistsandpedestrians, R.drawable.tunnel
+            R.drawable.passingplaceonnarrowroad, R.drawable.pedestriancrossing, R.drawable.roundabout,
+            R.drawable.trackforcyclistsandpedestrians, R.drawable.tunnel,R.drawable.advanceddirection,R.drawable.advisosrysign,
+            R.drawable.bustaxilane,R.drawable.endofbusandtaxi,R.drawable.direction,R.drawable.noleft,
+            R.drawable.residental,R.drawable.priority
     };
 
     String[] listviewShortDescription = new String[]{
@@ -32,7 +36,10 @@ public class DrivingSymbols extends AppCompatActivity{
             "It is mandatory sign and it Shows Direction to be followed Turn left or right ", "This is mandatory Sign and it tells us to pass in either side left or right",
             "It means passing place on narrow roads", "This Symbol comes when there is place where Pedestrian is crossing the road",
             "This symbol denotes for compulsory roundabout", "It shows the track for cyclists and pedestrian both",
-            "This shows Tunnel which has length of 2 Km",
+            "This shows Tunnel which has length of 2 Km","It Shows direction as well as distance to different places from the junction",
+            "it is advisory sign and it is with distance also to some places","This shows lane for bus and taxi",
+            "This shows end of Bus and Taxi Lane","It shows mandatory sign either straight or towards right ","This symbol means turning to left is prohibited",
+            "This symbol shows residental Area","This shows give priority to passing Vehicles"
 
     };
 
@@ -43,7 +50,7 @@ public class DrivingSymbols extends AppCompatActivity{
 
         List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 17; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put("listview_title", listviewTitle[i]);
             hm.put("listview_description", listviewShortDescription[i]);

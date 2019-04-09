@@ -2,17 +2,18 @@ package tapiopalonemi.fi.driversapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.widget.ViewFlipper;
 import java.util.ArrayList;
 
 //import android.widget.myListView;
 
 public class Informationactivity extends AppCompatActivity {
 
-    private ArrayList<String []> listOfLists;
+    private ArrayList<String[]> listOfLists;
     private int index = -1;
 
     @Override
@@ -39,12 +40,13 @@ public class Informationactivity extends AppCompatActivity {
         listOfLists.add(INFORMATIONS);
         listOfLists.add(INFORMATIONS2);
         nextInformation(null);
-        previousInformation (null);
+        previousInformation(null);
 
     }
-    private void showInformation(String [] information){
 
-        ListView myListView =  findViewById(R.id.information_list_view);
+    private void showInformation(String[] information) {
+
+        ListView myListView = findViewById(R.id.information_list_view);
         final ArrayAdapter<String> kk;
         kk = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
                 information);
@@ -53,24 +55,26 @@ public class Informationactivity extends AppCompatActivity {
         myListView.setAdapter(kk);
     }
 
-    private void nextInformation(View view){
+    private void nextInformation(View view) {
         index = index + 1;
-        if (index > listOfLists.size())
-        {
-            index = listOfLists.size()-1;
+        if (index > listOfLists.size()) {
+            index = listOfLists.size() - 1;
         }
+        Log.i("INFORMATIONS", "index: " + index);
+
         showInformation(listOfLists.get(index));
 
     }
+
     private void previousInformation(View view) {
         index = index - 1;
-        if (index < 0)
-        {
+        if (index < 0) {
             index = 0;
         }
-            showInformation(listOfLists.get(index));
+        Log.i("INFORMATIONS2", "index: " + index);
+        showInformation(listOfLists.get(index));
 
     }
 
-    }
+}
 
